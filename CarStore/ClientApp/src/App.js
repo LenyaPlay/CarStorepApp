@@ -4,10 +4,7 @@ import AppRoutes from './AppRoutes';
 import { Layout } from './components/Layout';
 import './custom.css';
 
-export default class App extends Component {
-  static displayName = App.name;
-
-  render() {
+export default function App() {
     return (
       <Layout>
         <Routes>
@@ -18,5 +15,4 @@ export default class App extends Component {
         </Routes>
       </Layout>
     );
-  }
 }

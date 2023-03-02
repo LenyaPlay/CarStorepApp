@@ -1,8 +1,15 @@
+using CarStore.Models;
+using Microsoft.EntityFrameworkCore;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<DbCarStore>(options =>
+    options.UseMySql(builder.Configuration.GetConnectionString("CarStoreDatabase"), new MySqlServerVersion(new Version(8, 0))));
 
 var app = builder.Build();
 
