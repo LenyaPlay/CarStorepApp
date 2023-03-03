@@ -75,7 +75,20 @@ public class AuthController : ControllerBase
         db = context;
     }
 
+    [HttpGet]
+    [Route("CheckSessionId")]
+    public IActionResult CheckSessionId()
+    {
+        string? session_id = Request.Cookies["session_id"];
 
+        var user = db.Users.FirstOrDefault(x => x.SessionId == session_id);
+        if (user == null)
+            return BadRequest();
+        
+        return Ok();
+    }
+
+    
     [HttpGet]
     [Route("Activate")]
     public IActionResult Activate(int id, string token)

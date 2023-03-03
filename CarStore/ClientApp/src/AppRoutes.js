@@ -3,11 +3,13 @@ import { FetchData } from "./components/FetchData";
 import { Register } from "./components/Register";
 import {Activate} from "./components/Activate";
 import {Login} from "./components/Login";
+import {Catalog} from "./components/Catalog";
+import {AutoAuth} from "./components/AutoAuth";
 
 const AppRoutes = [
   {
     index: true,
-    element: <Register />
+    element: <AutoAuth />
   },
   {
     path: '/counter',
@@ -28,6 +30,14 @@ const AppRoutes = [
   {
     path: '/register',
     element: <Register />
+  },
+  {
+    path: '/catalog',
+    element: <Catalog />
+  },
+  {
+    path: '/autoauth',
+    element: <AutoAuth />
   }
 ];
 

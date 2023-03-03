@@ -43,11 +43,11 @@ export function Login() {
     }
 
     if(response?.status === 200)
-        navigate('/Counter', { replace: true });
+        navigate('/Catalog', { replace: true });
 
     return (
         <div>
-            <div className="d-flex justify-content-center mt-5 my-3"><h1 className="mt-5">Регистрация</h1></div>
+            <div className="d-flex justify-content-center mt-5 my-3"><h1 className="mt-5">Вход</h1></div>
             <div className="d-flex justify-content-center">
                 <form className="w-25" onSubmit={handleSubmit(onSubmit)}>
                     <div>
